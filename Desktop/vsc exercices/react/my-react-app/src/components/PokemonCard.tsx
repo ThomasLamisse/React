@@ -9,28 +9,12 @@ function PokemonCard() {
       name: "mew",
     },
   ];
-
-  const pokemon = pokemonList[1];
-
-  pokemon.imgSrc ? (
-    <img
-      src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
-      alt=""
-    />
-  ) : (
-    <p>"???"</p>
-  );
+  const pokemon = pokemonList[0];
   return (
-    <section>
-      <figure>
-        <img
-          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
-          alt="Bulbasaur"
-        />
-      </figure>
-      <figcaption>Bulbasaur</figcaption>
-    </section>
+    <figure>
+      {pokemon.imgSrc ? <img src={pokemon.imgSrc} alt="Pokemon" /> : <p>???</p>}
+      <figcaption> {pokemon.name} </figcaption>
+    </figure>
   );
 }
-
 export default PokemonCard;
