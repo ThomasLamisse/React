@@ -1,9 +1,13 @@
 import PokemonCard from "./components/PokemonCard";
 import "./App.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import NavBar from "./components/NavBar.tsx";
 
 function App() {
+  useEffect(() => {
+    alert("Hello pokemon trainer :)");
+  }, []);
+
   const pokemonList = [
     {
       name: "bulbasaur",
@@ -29,6 +33,10 @@ function App() {
       name: "mew",
     },
   ];
+
+  const handeClickPika = () => {
+    alert("Pika Pikachuuu !!!!");
+  };
   const [pokemonIndex, setPokemonIndex] = useState(0);
   return (
     <section>
@@ -37,7 +45,6 @@ function App() {
         pokemonIndex={pokemonIndex}
         pokemonList={pokemonList}
         setPokemonIndex={setPokemonIndex}
-        set
       />
     </section>
   );
