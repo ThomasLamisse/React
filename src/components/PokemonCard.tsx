@@ -1,23 +1,19 @@
 function PokemonCard({ pokemon }) {
-  pokemon.imgSrc ? (
-    <img
-      src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
-      alt=""
-    />
-  ) : (
-    <p>"???"</p>
-  );
+  interface PropsPokemon {
+    name: string;
+    imgSrc?: string;
+  }
+
+  console.log(pokemon);
+
   return (
     <section>
       <figure>
-        <img
-          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
-          alt="Bulbasaur"
-        />
+        { pokemon.imgSrc ? <img src={pokemon.imgSrc} alt="" /> : <p>???</p>}
       </figure>
-      <figcaption>Bulbasaur</figcaption>
+      <figcaption>{pokemon.name}</figcaption>
     </section>
   );
 }
-
+  
 export default PokemonCard;
